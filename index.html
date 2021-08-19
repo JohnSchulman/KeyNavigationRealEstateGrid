@@ -1,0 +1,130 @@
+<html>
+<head>
+	<!-- include CAPH 3.0.1 default package -->
+	<!--<link rel="stylesheet" href="css/style.css">-->
+	<LINK rel="stylesheet" href="lib/caph/3.0.1/caph.min.css">
+	
+    <!-- include jQuery file (you can use AngularJS & jQuery in your environment) -->
+    <SCRIPT src="lib/caph/3.0.1/bower_components/jquery/dist/jquery.min.js" type="text/javascript"></SCRIPT>
+    <!-- include the CAPH Package for AngularJS -->
+	<SCRIPT src="lib/caph/3.0.1/caph-jquery.min.js"></SCRIPT>
+	<script src="js/grid.js"></script>
+</head>
+<script>
+</script>
+<style>
+	body { background:#666; margin:0; overflow:hidden }
+	#nav { display:flex; justify-content:space-around; }
+	#nav img { height: 80px; float:left }
+	#nav select { position:relative; height:60px; top:10px; }
+	select  {color:#fff; background-color: #414141;}
+	#list { padding-left:100px; height:calc(100vh - 80px); overflow-y : scroll; background:#000; }
+	#media { background:#fff; transform: scale(0.01); opacity:0; position:absolute; top:0; left:0; width:100vw; height:100vh; z-index:9; transform-origin: 50% 50%; transition:all 2s; }
+	.card {
+		position: relative;
+		border: 6px solid #111;
+		width: 310px;
+		height: 150px;
+		margin-bottom: 20px;
+    	margin-right: 20px;
+		float: left;
+		opacity:0;
+		transition:opacity 1s;
+		background-size:cover;
+	}
+	#iframeClick { position:absolute; top:0; left:0; width:100vw; height:100vh; z-index:10; opacity:0; display:none }
+
+	.title {
+		position: absolute; /* Pour que le placement de l'élément soit "libre" */
+		top: 0; /* Je le place en haut */
+		left: 0; /* et à gauche */
+		font-size: 14px;
+		font-weight: bold;
+		margin: 2px 2px 2px 2px; /* Je mets une marge pour qu'il soit un peu décollé du bord*/
+		background-color: #111;
+		color: #fff;
+		padding: 2px 10px; /* Je décale le titre par rapport au bord de l'encadrement (vers l'intérieur) */
+	}
+	/* Je sélectionne les classes rooms, area et price */
+	.rooms, .area, .price {
+		position: absolute; /* Pour que le placement de l'élément soit "libre"*/
+		bottom: 0; /* On les place en bas */
+		font-size: 30px;
+		background-color: #111;
+		color: #fff;
+		padding: 1px 10px;
+		margin: 2px 2px 2px 2px;
+	}
+	
+	.rooms{
+		left: 0; /* Pour le placer à gauche */
+	}
+
+	.area{
+		left: 0;
+	}
+	.area{
+		left: 15%; /* Pour le placer à gauche un peu décalé (à améliorer) */
+	}
+	.price{
+		right: 0; /* Pour le placer en bas à droite */
+	}
+
+	.br { position: absolute; bottom:0.3vh; right:0.3vh; background:#000; padding: 0.2vh 0.5vh 0.15vh; }
+
+	#price {
+
+	}
+
+</style>
+
+<body>
+
+<div id="nav">
+	<img id="logo">
+
+	<select focusable id="price">
+		<option value="0">Prix Vente Max</option>
+		<option value="100000">100.000€</option>
+		<option value="200000">200.000€</option>
+		<option value="300000">300.000€</option>
+		<option value="400000">400.000€</option>
+		<option value="4000000">500.000€ et plus</option>
+	</select>
+
+	<select focusable id="transaction">
+		<option value="0">Transaction</option>
+		<option value="9">Vente</option>
+		<option value="10">Location</option>
+	</select>
+
+	<select focusable id="type">
+		<option value="0">Type de bien</option>
+		<option value="16">Maison</option>
+		<option value="15">Appartement</option>
+		<option value="99">Autres</option>
+	</select>
+
+	<!--Pour retrouver en JavaScript le contenu d'une option, on utilise l'attribut text de option, tandis que l'attribut value retourne la valeur-->
+	<select focusable id="city">
+		<option value="0">Villes</option>
+	</select>
+
+	<select focusable id="rooms">
+		<option value="0">Nb de pièces</option>
+		<option value="1">Studio</option>
+		<option value="2">2 pièces</option>
+		<option value="3">3 pièces</option>
+		<option value="4">4 pièces et +</option>
+	</select>
+
+</div>
+
+<div id="list"></div>
+
+<iframe id="media" frameborder="0"></iframe>
+<div id="iframeClick"></div>
+
+</body>
+</html>
+

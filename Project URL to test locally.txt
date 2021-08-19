@@ -1,0 +1,26 @@
+			       Project URL pour tester en Local
+
+
+Project Controller (Grille) : 
+
+
+	
+	Local en général :
+
+	
+		file:///C:/[CHEMIN VERS LE PROJET]/KeyNavigationRealEstateGrid/index.html?c=236
+
+
+
+
+	Mon Local :
+	
+		file:///C:/Users/john_/OneDrive/Desktop/Mediapole/KeyNavigationRealEstateGrid/index.html?c=236
+		
+	
+
+
+
+
+
+
